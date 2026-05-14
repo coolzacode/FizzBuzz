@@ -1,18 +1,22 @@
 function analyzeNumber(num) {
-    const divByThree = (num % 3 === 0) ? true : false;
-    const divByFive = (num % 5 === 0) ? true : false;
+    const divByThree = (num % 3 === 0);
+    const divByFive = (num % 5 === 0);
 
     if (divByThree && divByFive) {
-        console.log("FizzBuzz");
+        return "FizzBuzz";
     } 
     else if (divByThree) {
-        console.log("Fizz");
+        return "Fizz";
     }
     else if (divByFive) {
-        console.log("Buzz");
+        return "Buzz";
+    }
+    else {
+        return num;
     }
 }
 
-analyzeNumber(30);
-analyzeNumber(3);
-analyzeNumber(5);
+console.log(analyzeNumber(3));
+console.log(analyzeNumber(5));
+console.log(analyzeNumber(7));
+console.log(analyzeNumber(15));
