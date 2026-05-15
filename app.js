@@ -1,19 +1,8 @@
-function analyzeNumber(num) {
-    const divByThree = (num % 3 === 0);
-    const divByFive = (num % 5 === 0);
+function analyzeNumber (num) {
+    const divByThree = (num % 3 === 0) ? "Fizz" : "";
+    const divByFive = (num % 5 === 0) ? "Buzz" : "";
 
-    if (divByThree && divByFive) {
-        return "FizzBuzz";
-    } 
-    else if (divByThree) {
-        return "Fizz";
-    }
-    else if (divByFive) {
-        return "Buzz";
-    }
-    else {
-        return num;
-    }
+    return (divByThree + divByFive) ? (divByThree + divByFive) : num;
 }
 
 console.log(analyzeNumber(3));
