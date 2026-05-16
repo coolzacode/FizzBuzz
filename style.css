@@ -1,48 +1,48 @@
 /* color variables */
 :root {
     /* dark mode colors */
-    dm-site-background: #0F172A;
-    dm-terminal-background: #1E293B;
-    dm-terminal-border: #334155;
-    dm-terminal-text: #F8FAFC;
+    --dm-site-background: #0F172A;
+    --dm-terminal-background: #1E293B;
+    --dm-terminal-border: #334155;
+    --dm-terminal-text: #F8FAFC;
 
-    dm-terminal-fizz-background: #A855F7;
-    dm-terminal-buzz-background: #F59E0B;
-    dm-terminal-fizzbuzz-background: #10B981;
+    --dm-terminal-fizz-background: #A855F7;
+    --dm-terminal-buzz-background: #F59E0B;
+    --dm-terminal-fizzbuzz-background: #10B981;
 
-    dm-fizz-btn-background: #2E1065;
-    dm-fizz-btn-border: #A855F7;
-    dm-fizz-btn-text: #F5F3FF;
+    --dm-fizz-btn-background: #2E1065;
+    --dm-fizz-btn-border: #A855F7;
+    --dm-fizz-btn-text: #F5F3FF;
 
-    dm-buzz-btn-background: #451A03;
-    dm-buzz-btn-border: #F59E0B;
-    dm-buzz-btn-text: #FFFBEB;
+    --dm-buzz-btn-background: #451A03;
+    --dm-buzz-btn-border: #F59E0B;
+    --dm-buzz-btn-text: #FFFBEB;
 
-    dm-fizzbuzz-btn-background: #064E3B;
-    dm-fizzbuzz-btn-border: #10B981;
-    dm-fizzbuzz-btn-text: #ECFDF5;
+    --dm-fizzbuzz-btn-background: #064E3B;
+    --dm-fizzbuzz-btn-border: #10B981;
+    --dm-fizzbuzz-btn-text: #ECFDF5;
 
     /* light mode colors */
-    lm-site-background: #F1F5F9;
-    lm-terminal-background: #FFFFFF;
-    lm-terminal-border: #E2E8F0;
-    lm-terminal-text: #1E293B;
+    --lm-site-background: #F1F5F9;
+    --lm-terminal-background: #FFFFFF;
+    --lm-terminal-border: #E2E8F0;
+    --lm-terminal-text: #1E293B;
 
-    lm-terminal-fizz-background: #7C3AED;
-    lm-terminal-buzz-background: #D97706;
-    lm-terminal-fizzbuzz-background: #059669;
+    --lm-terminal-fizz-background: #7C3AED;
+    --lm-terminal-buzz-background: #D97706;
+    --lm-terminal-fizzbuzz-background: #059669;
 
-    lm-fizz-btn-background: #EDE9FE;
-    lm-fizz-btn-border: #7C3AED;
-    lm-fizz-btn-text: #5B21B6;
+    --lm-fizz-btn-background: #EDE9FE;
+    --lm-fizz-btn-border: #7C3AED;
+    --lm-fizz-btn-text: #5B21B6;
 
-    lm-buzz-btn-background: #FFFBEB;
-    lm-buzz-btn-border: #D97706;
-    lm-buzz-btn-text: #92400E;
+    --lm-buzz-btn-background: #FFFBEB;
+    --lm-buzz-btn-border: #D97706;
+    --lm-buzz-btn-text: #92400E;
 
-    lm-fizzbuzz-btn-background: #ECFDF5;
-    lm-fizzbuzz-btn-border: #059669;
-    lm-fizzbuzz-btn-text: #065F46;
+    --lm-fizzbuzz-btn-background: #ECFDF5;
+    --lm-fizzbuzz-btn-border: #059669;
+    --lm-fizzbuzz-btn-text: #065F46;
 }
 
 /* reset */
@@ -57,6 +57,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--dm-site-background);
 }
 
 /* reusable utilities */
@@ -72,3 +73,4 @@ body {
 .btn:hover {
     transform: scale(1.01);
 }
+
