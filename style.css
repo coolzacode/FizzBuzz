@@ -44,3 +44,17 @@
     lm-fizzbuzz-btn-border: #059669;
     lm-fizzbuzz-btn-text: #065F46;
 }
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
