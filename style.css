@@ -1,48 +1,43 @@
 /* color variables */
 :root {
-    /* dark mode colors */
-    --dm-site-background: #0F172A;
-    --dm-terminal-background: #1E293B;
-    --dm-terminal-border: #334155;
-    --dm-terminal-text: #F8FAFC;
-
-    --dm-terminal-fizz-background: #A855F7;
-    --dm-terminal-buzz-background: #F59E0B;
-    --dm-terminal-fizzbuzz-background: #10B981;
-
-    --dm-fizz-btn-background: #2E1065;
-    --dm-fizz-btn-border: #A855F7;
-    --dm-fizz-btn-text: #F5F3FF;
-
-    --dm-buzz-btn-background: #451A03;
-    --dm-buzz-btn-border: #F59E0B;
-    --dm-buzz-btn-text: #FFFBEB;
-
-    --dm-fizzbuzz-btn-background: #064E3B;
-    --dm-fizzbuzz-btn-border: #10B981;
-    --dm-fizzbuzz-btn-text: #ECFDF5;
-
     /* light mode colors */
-    --lm-site-background: #F1F5F9;
-    --lm-terminal-background: #FFFFFF;
-    --lm-terminal-border: #E2E8F0;
-    --lm-terminal-text: #1E293B;
+    --site-background: #F1F5F9;
+    --terminal-background: #FFFFFF;
+    --terminal-border: #E2E8F0;
+    --terminal-text: #1E293B;
 
-    --lm-terminal-fizz-background: #7C3AED;
-    --lm-terminal-buzz-background: #D97706;
-    --lm-terminal-fizzbuzz-background: #059669;
+    --fizz-btn-background: #EDE9FE;
+    --fizz-btn-border: #7C3AED;
+    --fizz-btn-text: #5B21B6;
 
-    --lm-fizz-btn-background: #EDE9FE;
-    --lm-fizz-btn-border: #7C3AED;
-    --lm-fizz-btn-text: #5B21B6;
+    --buzz-btn-background: #FFFBEB;
+    --buzz-btn-border: #D97706;
+    --buzz-btn-text: #92400E;
 
-    --lm-buzz-btn-background: #FFFBEB;
-    --lm-buzz-btn-border: #D97706;
-    --lm-buzz-btn-text: #92400E;
+    --fizzbuzz-btn-background: #ECFDF5;
+    --fizzbuzz-btn-border: #059669;
+    --fizzbuzz-btn-text: #065F46;
+}
 
-    --lm-fizzbuzz-btn-background: #ECFDF5;
-    --lm-fizzbuzz-btn-border: #059669;
-    --lm-fizzbuzz-btn-text: #065F46;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --site-background: #0F172A;
+        --terminal-background: #1E293B;
+        --terminal-border: #334155;
+        --terminal-text: #F8FAFC;
+
+        --fizz-btn-background: #2E1065;
+        --fizz-btn-border: #A855F7;
+        --fizz-btn-text: #F5F3FF;
+
+        --buzz-btn-background: #451A03;
+        --buzz-btn-border: #F59E0B;
+        --buzz-btn-text: #FFFBEB;
+
+        --fizzbuzz-btn-background: #064E3B;
+        --fizzbuzz-btn-border: #10B981;
+        --fizzbuzz-btn-text: #ECFDF5;
+    }
 }
 
 
@@ -58,7 +53,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--dm-site-background);
+    background-color: var(--site-background);
     justify-content: space-evenly;
     align-items: center;
 }
@@ -87,8 +82,8 @@ body {
     height: 400px;
     width: 600px;
     padding: 10px;
-    background-color: var(--dm-terminal-background);
-    border: 2px solid var(--dm-terminal-border);
+    background-color: var(--terminal-background);
+    border: 2px solid var(--terminal-border);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -96,7 +91,7 @@ body {
 
 /* inner terminal (text) */
 .text {
-    color: var(--dm-terminal-text);
+    color: var(--terminal-text);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -119,19 +114,19 @@ body {
 }
 
 .fizz-btn {
-    background-color: var(--dm-fizz-btn-background);
-    border: 1px solid var(--dm-fizz-btn-border);
-    color: var(--dm-fizz-btn-text)
+    background-color: var(--fizz-btn-background);
+    border: 1px solid var(--fizz-btn-border);
+    color: var(--fizz-btn-text)
 }
 
 .buzz-btn {
-    background-color: var(--dm-buzz-btn-background);
-    border: 1px solid var(--dm-buzz-btn-border);
-    color: var(--dm-buzz-btn-text);
+    background-color: var(--buzz-btn-background);
+    border: 1px solid var(--buzz-btn-border);
+    color: var(--buzz-btn-text);
 }
 
 .fizzbuzz-btn {
-    background-color: var(--dm-fizzbuzz-btn-background);
-    border: 1px solid var(--dm-fizzbuzz-btn-border);
-    color: var(--dm-fizzbuzz-btn-text);
+    background-color: var(--fizzbuzz-btn-background);
+    border: 1px solid var(--fizzbuzz-btn-border);
+    color: var(--fizzbuzz-btn-text);
 }
