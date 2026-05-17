@@ -17,6 +17,8 @@
     --fizzbuzz-btn-background: #ECFDF5;
     --fizzbuzz-btn-border: #059669;
     --fizzbuzz-btn-text: #065F46;
+
+    --btn-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,96 +39,139 @@
         --fizzbuzz-btn-background: #064E3B;
         --fizzbuzz-btn-border: #10B981;
         --fizzbuzz-btn-text: #ECFDF5;
+
+        --fizz-shadow: 0 4px 6px rgba(168, 85, 247, 0.4);
+        --buzz-shadow: 0 4px 6px rgba(245, 158, 11, 0.4);
+        --fizzbuzz-shadow: 0 4px 6px rgba(16, 185, 129, 0.4);
     }
 }
 
-
-/* reset */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* TYPOGRAPHY & BODY SETUP */
 body {
     font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     background-color: var(--site-background);
-    justify-content: space-evenly;
+    color: var(--terminal-text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-
-/* reusable utilities */
-.btn {
-    width: 200px;
-    height: 75px;
-    padding: 10px 30px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
-    letter-spacing: 1px;
-    transition: transform 0.2s;
-}
-
-.btn:hover {
-    transform: scale(1.01);
-}
-
-
-/* terminal (output section) */
-.output-section {
-    height: 400px;
-    width: 600px;
-    padding: 10px;
-    background-color: var(--terminal-background);
-    border: 2px solid var(--terminal-border);
+/* MAIN CONTAINER WRAPPER */
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    gap: 2rem;
 }
 
-/* inner terminal (text) */
+/* TERMINAL (OUTPUT SECTION) */
+.output-section {
+    width: 100%;
+    max-width: 600px;
+    height: 60vh;
+    min-height: 300px;
+    padding: 1rem;
+    background-color: var(--terminal-background);
+    border: 2px solid var(--terminal-border);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* INNER TERMINAL TEXT */
 .text {
-    color: var(--terminal-text);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 .text-current {
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: bold;
 }
 
 
-/* buttons sections (input section) */
+/* INPUT SECTION */
 .input-section {
     width: 100%;
-    padding: 0 15%;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
+/* REUSABLE BUTTON UTILITIES */
+.btn {
+    flex: 1 1 150px;
+    max-width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn:focus-visible { /* ACCESSIBILITY: KEYBOARD FOCUS STATE */
+    outline: 3px solid var(--terminal-text);
+    outline-offset: 2px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* BUTTON VARIANTS */
 .fizz-btn {
     background-color: var(--fizz-btn-background);
-    border: 1px solid var(--fizz-btn-border);
-    color: var(--fizz-btn-text)
+    border: 2px solid var(--fizz-btn-border);
+    color: var(--fizz-btn-text);
+}
+
+.fizz-btn:hover {
+    box-shadow: var(--fizz-shadow, var(--btn-shadow));
 }
 
 .buzz-btn {
     background-color: var(--buzz-btn-background);
-    border: 1px solid var(--buzz-btn-border);
+    border: 2px solid var(--buzz-btn-border);
     color: var(--buzz-btn-text);
+}
+
+.buzz-btn:hover {
+    box-shadow: var(--buzz-shadow, var(--btn-shadow));
 }
 
 .fizzbuzz-btn {
     background-color: var(--fizzbuzz-btn-background);
-    border: 1px solid var(--fizzbuzz-btn-border);
+    border: 2px solid var(--fizzbuzz-btn-border);
     color: var(--fizzbuzz-btn-text);
+}
+
+.fizzbuzz-btn:hover {
+    box-shadow: var(--fizzbuzz-shadow, var(--btn-shadow));
 }
