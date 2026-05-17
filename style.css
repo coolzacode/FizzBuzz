@@ -73,6 +73,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     font-size: 16px;
+    letter-spacing: 1px;
     transition: transform 0.2s;
 }
 
@@ -85,11 +86,27 @@ body {
 .output-section {
     height: 400px;
     width: 600px;
+    padding: 10px;
     background-color: var(--dm-terminal-background);
     border: 2px solid var(--dm-terminal-border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* ---- TODO : style the inside of the terminal ---- */
+/* inner terminal (text) */
+.text {
+    color: var(--dm-terminal-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.text-current {
+    font-size: 22px;
+    font-weight: bold;
+}
 
 
 /* buttons sections (input section) */
