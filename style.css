@@ -45,6 +45,7 @@
     --lm-fizzbuzz-btn-text: #065F46;
 }
 
+
 /* reset */
 * {
     margin: 0;
@@ -58,10 +59,15 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: var(--dm-site-background);
+    justify-content: space-evenly;
+    align-items: center;
 }
+
 
 /* reusable utilities */
 .btn {
+    width: 200px;
+    height: 75px;
     padding: 10px 30px;
     border-radius: 8px;
     font-weight: bold;
@@ -74,3 +80,41 @@ body {
     transform: scale(1.01);
 }
 
+
+/* terminal (output section) */
+.output-section {
+    height: 400px;
+    width: 600px;
+    background-color: var(--dm-terminal-background);
+    border: 2px solid var(--dm-terminal-border);
+}
+
+/* ---- TODO : style the inside of the terminal ---- */
+
+
+/* buttons sections (input section) */
+.input-section {
+    width: 100%;
+    padding: 0 15%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fizz-btn {
+    background-color: var(--dm-fizz-btn-background);
+    border: 1px solid var(--dm-fizz-btn-border);
+    color: var(--dm-fizz-btn-text)
+}
+
+.buzz-btn {
+    background-color: var(--dm-buzz-btn-background);
+    border: 1px solid var(--dm-buzz-btn-border);
+    color: var(--dm-buzz-btn-text);
+}
+
+.fizzbuzz-btn {
+    background-color: var(--dm-fizzbuzz-btn-background);
+    border: 1px solid var(--dm-fizzbuzz-btn-border);
+    color: var(--dm-fizzbuzz-btn-text);
+}
