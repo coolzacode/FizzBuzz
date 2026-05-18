@@ -92,21 +92,28 @@ body {
 
     overflow-y: auto;
     scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.output-section::before {
+    content: '';
+    margin-top: auto;
 }
 
 /* INNER TERMINAL TEXT */
-.text {
+.text-div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.125rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px dashed var(--terminal-border);
 }
 
-.text-current {
+.text-div-active {
     font-size: 1.375rem;
     font-weight: bold;
 }
-
 
 /* INPUT SECTION */
 .input-section {
