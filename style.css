@@ -135,26 +135,35 @@ body {
 }
 
 .line { 
-    animation: shake 0.2s ease-in-out; 
     border-radius: 4px;
     padding: 0 4px;
     font-weight: bold;
+    transition: all 0.2s ease;
 }
-/* .line-fizz { 
+
+.line-fizz { 
     color: var(--fizz-btn-border); 
     background-color: var(--fizz-terminal-background);
 }
+
 .line-buzz { 
     color: var(--buzz-btn-border); 
     background-color: var(--buzz-terminal-background);
 }
+
 .line-fizzbuzz { 
     color: var(--fizzbuzz-btn-border);
     background-color: var(--fizzbuzz-terminal-background);
-} */
+}
+
+.line-none {
+    color: var(--none-btn-text);
+}
+
 .line-error {
     color: var(--error-text);
     background-color: var(--error-background);
+    animation: shake 0.2s ease-in-out;
 }
 
 @keyframes shake {

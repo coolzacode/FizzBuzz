@@ -1,37 +1,28 @@
 const outputSection = document.getElementById('output-section');
+const inputSection = document.getElementById('input-section');
 let currNum = 1;
 
-function analyzeNumber(rawInput) {
-    const num = Number(rawInput);
-
-    if (Number.isNaN(num)) {
-        return 'invalid input';
-    }
-
-    const divByThree = (num % 3 === 0);
-    const divByFive = (num % 5 === 0);
-    let result = '';
-
-    if (divByThree) result += 'Fizz';
-    if (divByFive) result += 'Buzz';
-
-    return result || `${num}`
+// only returns what is expected from the user
+function getCorrectAnswer(num) {
+    if (num % 15 === 0) return 'FizzBuzz';
+    if (num % 3 === 0) return 'Fizz';
+    if (num % 5 === 0) return 'Buzz';
+    return 'None';
 }
 
-function addLine() {
+function addLine(num) {
     const newDiv = document.createElement('div');
-    newDiv.className = 'text-div';
-    newDiv.id = `text-div-${currNum}`;
+    newDiv.className = 'text-div text-div-active';
+    newDiv.id = `row-${num}`;
 
     const numP = document.createElement('p');
-    numP.textContent = `${currNum}`;
-    newDiv.appendChild(numP);
+    numP.textContent = num;
 
     const answerText = document.createElement('p');
-    answerText.id = `answerText-${currNum}`
-    answerText.textContent = '';
-    newDiv.appendChild(answerText);
+    answerText.className = 'line';
 
+    newDiv.appendChild(numP);
+    newDiv.appendChild(answerText);
     outputSection.appendChild(newDiv);
 
     outputSection.scrollTo({
@@ -40,35 +31,37 @@ function addLine() {
     })
 }
 
-function playGame(input) {
-    const userInput = document.getElementById(`answerText-${currNum}`);
+function playGame(userGuess) {
+    const correctAnswer = getCorrectAnswer(currNum);
+    const currentRow = document.getElementById(`row-${currNum}`);
 
-    if (analyzeNumber(currNum) === `${input}`) {
-        userInput.textContent = `${input}`;
-    } 
-    else if (`${input}` === 'None') {
-        userInput.textContent = '';
-    }
-    else {
-        userInput.textContent = '!';
-        document.getElementById(`text-div-${currNum}`).classList.add('line-error')
+    const answerText = currentRow.querySelector('.line');
+    currentRow.classList.remove('text-div-active');
+
+    if (userGuess === correctAnswer) {
+        if (userGuess === 'None') {
+            answerText.textContent = '\u2713';
+            answerText.classList.add('line-none');
+        } else {
+            answerText.textContent = userGuess;
+            answerText.classList.add(`line-${userGuess.toLowerCase()}`);
+        }
+    } else {
+        answerText.textContent = '\u2717';
+        currentRow.classList.add('line-error');
     }
 
     currNum++;
-    addLine();
+    addLine(currNum);
 }
 
-addLine();
+// start game with the first line
+addLine(currNum);
 
-document.getElementById('fizz-btn').addEventListener('click', () => {
-    playGame('Fizz');
-})
-document.getElementById('fizzbuzz-btn').addEventListener('click', () => {
-    playGame('FizzBuzz');
-})
-document.getElementById('buzz-btn').addEventListener('click', () => {
-    playGame('Buzz');
-})
-document.getElementById('none-btn').addEventListener('click', () => {
-    playGame('None');
+inputSection.addEventListener('click', (e) => {
+    const buttonClicked = event.target.closest('button');
+    if (!buttonClicked) return;
+    
+    const guess = buttonClicked.dataset.guess;
+    playGame(guess);
 })
