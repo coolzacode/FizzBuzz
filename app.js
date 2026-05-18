@@ -44,9 +44,14 @@ function playGame(input) {
 
     if (analyzeNumber(currNum) === `${input}`) {
         userInput.textContent = `${input}`;
-    } else {
+    } 
+    else if (`${input}` === 'None') {
         userInput.textContent = '';
     }
+    else {
+        userInput.textContent = '!';
+    }
+    
     currNum++;
     addLine();
 }
@@ -61,4 +66,7 @@ document.getElementById('fizzbuzz-btn').addEventListener('click', () => {
 })
 document.getElementById('buzz-btn').addEventListener('click', () => {
     playGame('Buzz');
+})
+document.getElementById('none-btn').addEventListener('click', () => {
+    playGame('None');
 })
