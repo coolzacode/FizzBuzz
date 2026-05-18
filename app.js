@@ -59,7 +59,7 @@ function playGame(userGuess) {
 addLine(currNum);
 
 inputSection.addEventListener('click', (e) => {
-    const buttonClicked = event.target.closest('button');
+    const buttonClicked = e.target.closest('button');
     if (!buttonClicked) return;
     
     const guess = buttonClicked.dataset.guess;
