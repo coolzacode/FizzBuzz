@@ -21,6 +21,7 @@ function analyzeNumber(rawInput) {
 function addLine() {
     const newDiv = document.createElement('div');
     newDiv.className = 'text-div';
+    newDiv.id = `text-div-${currNum}`;
 
     const numP = document.createElement('p');
     numP.textContent = `${currNum}`;
@@ -44,14 +45,18 @@ function playGame(input) {
 
     if (analyzeNumber(currNum) === `${input}`) {
         userInput.textContent = `${input}`;
+        if (`${input}` === 'Fizz') document.getElementById(`text-div-${currNum}`).classList.add('line-fizz');
+        if (`${input}` === 'Buzz') document.getElementById(`text-div-${currNum}`).classList.add('line-buzz');
+        if (`${input}` === 'FizzBuzz') document.getElementById(`text-div-${currNum}`).classList.add('line-fizzbuzz');
     } 
     else if (`${input}` === 'None') {
         userInput.textContent = '';
     }
     else {
         userInput.textContent = '!';
+        document.getElementById(`text-div-${currNum}`).classList.add('line-error')
     }
-    
+
     currNum++;
     addLine();
 }
