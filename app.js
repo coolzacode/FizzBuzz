@@ -1,3 +1,4 @@
+const outputSection = document.getElementById('output-section');
 let currNum = 1;
 
 function analyzeNumber(rawInput) {
@@ -18,8 +19,6 @@ function analyzeNumber(rawInput) {
 }
 
 function addLine() {
-    const outputSection = document.getElementById('output-section');
-
     const newDiv = document.createElement('div');
     newDiv.className = 'text-div';
 
@@ -28,7 +27,8 @@ function addLine() {
     newDiv.appendChild(numP);
 
     const answerText = document.createElement('p');
-    answerText.textContent = 'fizz';
+    answerText.id = `answerText-${currNum}`
+    answerText.textContent = '';
     newDiv.appendChild(answerText);
 
     outputSection.appendChild(newDiv);
@@ -37,12 +37,28 @@ function addLine() {
         top: outputSection.scrollHeight,
         behavior: 'smooth'
     })
+}
 
-    console.log(newDiv);
+function playGame(input) {
+    const userInput = document.getElementById(`answerText-${currNum}`);
+
+    if (analyzeNumber(currNum) === `${input}`) {
+        userInput.textContent = `${input}`;
+    } else {
+        userInput.textContent = '';
+    }
     currNum++;
+    addLine();
 }
 
 addLine();
 
-const btn = document.getElementById('fizz-btn');
-btn.addEventListener('click', addLine);
+document.getElementById('fizz-btn').addEventListener('click', () => {
+    playGame('Fizz');
+})
+document.getElementById('fizzbuzz-btn').addEventListener('click', () => {
+    playGame('FizzBuzz');
+})
+document.getElementById('buzz-btn').addEventListener('click', () => {
+    playGame('Buzz');
+})
