@@ -5,8 +5,8 @@
     --terminal-background: #FFFFFF;
     --terminal-border: #E2E8F0;
     --terminal-text: #1E293B;
-    --error-text: #E11D48;
     --error-background: #FFF1F2;
+    --error-text: #E11D48;
 
     --fizz-terminal-background: #F5F3FF;
     --fizz-btn-background: #EDE9FE;
@@ -36,8 +36,8 @@
         --terminal-background: #1E293B;
         --terminal-border: #334155;
         --terminal-text: #F8FAFC;
-        --error-text: #FB7185;
-        --error-background: #4C0519;
+        --error-background: #3F242C;
+        --error-text: #FCA5A5;
 
         --fizz-terminal-background: #2E1065;
         --fizz-btn-background: #2E1065;
@@ -140,7 +140,7 @@ body {
     padding: 0 4px;
     font-weight: bold;
 }
-.line-fizz { 
+/* .line-fizz { 
     color: var(--fizz-btn-border); 
     background-color: var(--fizz-terminal-background);
 }
@@ -151,7 +151,7 @@ body {
 .line-fizzbuzz { 
     color: var(--fizzbuzz-btn-border);
     background-color: var(--fizzbuzz-terminal-background);
-}
+} */
 .line-error {
     color: var(--error-text);
     background-color: var(--error-background);
